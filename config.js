@@ -15,11 +15,11 @@ config = {
         database: {
             client: 'postgres',
             connection: {
-                  host: 'ec2-54-204-0-120.compute-1.amazonaws.com',
-                  user: 'jxegjewuyuboco',
-                  password: '96_ED8sJYMbZee_wl08MiABuhm',
-                  database: 'doojdl4mj9v6v',
-                  port: '5432'
+                host: process.env.POSTGRES_HOST,
+                user: process.env.POSTGRES_USER,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                port: '5432'
             },
             debug: false
         },
@@ -34,11 +34,11 @@ config = {
         storage: {
             active: 'ghost-s3',
             'ghost-s3': {
-                accessKeyId: 'AKIAIWVOEME3TWTZIUOA',
-                secretAccessKey: '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',
-                bucket: 'summer-of-taylor',
-                region: 'us-west-2',
-                assetHost: 'https://summer-of-taylor.s3-us-west-2.amazonaws.com'
+                accessKeyId: process.env.S3_KEY,
+                secretAccessKey: process.env.S3_SECRET,
+                bucket: process.env.S3_BUCKET,
+                region: process.env.S3_REGION,
+                assetHost: process.env.S3_HOST
             }
         },
     },
