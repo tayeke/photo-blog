@@ -13,19 +13,34 @@ config = {
         url: 'http://my-ghost-blog.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                  host: 'ec2-54-204-0-120.compute-1.amazonaws.com',
+                  user: 'jxegjewuyuboco',
+                  password: '96_ED8sJYMbZee_wl08MiABuhm',
+                  database: 'doojdl4mj9v6v',
+                  port: '5432'
             },
             debug: false
         },
 
         server: {
             // Host to be passed to node's `net.Server#listen()`
-            host: '127.0.0.1',
+            host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
-            port: '2368'
+            port: process.env.port
         }
+
+        storage: {
+            active: 'ghost-s3',
+            'ghost-s3': {
+                accessKeyId: 'AKIAIWVOEME3TWTZIUOA',
+                secretAccessKey: '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',
+                bucket: 'summer-of-taylor',
+                region: 'us-west-2',
+                assetHost: 'https://summer-of-taylor.s3-us-west-2.amazonaws.com'
+            }
+        },
     },
 
     // ### Development **(default)**
