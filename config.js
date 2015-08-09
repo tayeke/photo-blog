@@ -29,7 +29,7 @@ config = {
             host: '0.0.0.0',
             // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: process.env.port
-        }
+        },
 
         storage: {
             active: 'ghost-s3',
@@ -40,7 +40,7 @@ config = {
                 region: process.env.S3_REGION,
                 assetHost: process.env.S3_HOST
             }
-        },
+        }
     },
 
     // ### Development **(default)**
