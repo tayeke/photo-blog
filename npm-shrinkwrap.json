@@ -1845,8 +1845,8 @@
     },
     "nodemailer": {
       "version": "0.7.1",
-      "from": "nodemailer@0.7.1",
-      "resolved": "https://registry.npmjs.org/nodemailer/-/nodemailer-0.7.1.tgz",
+      "from": "nodemailer@0.6.5",
+      "resolved": "https://registry.npmjs.org/nodemailer/-/nodemailer-0.6.5.tgz",
       "dependencies": {
         "mailcomposer": {
           "version": "0.2.12",
