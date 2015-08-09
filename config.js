@@ -11,7 +11,17 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://adventure.tayloreke.com',
-        mail: {},
+        mail: {
+          transport: 'SMTP',
+          host: 'smtp.mandrill.org',
+          options: {
+            service: 'Mandrill',
+            auth: {
+              user: process.env.MANDRILL_USER,
+              pass: process.env.MANDRILL_PASS
+            },
+          },
+        },
         database: {
             client: 'postgres',
             connection: {
